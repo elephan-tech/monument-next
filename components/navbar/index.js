@@ -24,7 +24,6 @@ const Navbar = ({ pages, title }) => {
       position="sticky"
       margin="0px 0px 16px 0px"
     >
-      <Flex />
       {showAlertBar && (
         <Banner color="danger">
           <Typography variant="subtitle1" color="light" style={{ flexGrow: 1 }}>
