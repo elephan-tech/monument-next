@@ -1,24 +1,85 @@
-import Link from "next/link";
-import Box from "../box";
+import NextLink from "next/link";
+import { useRouter } from "next/router";
+import { useState } from "react";
+import socials from "../../config/socials";
+import Box from "../Box";
+import Button from "../Button";
 import Logo from "../Logo";
-import Typography from "../typography";
-import TopBar from "./TopBar";
+import NavLink from "../NavLink";
+import Typography from "../Typography";
+import Banner from "./Banner";
 
-const Navbar = ({ pages }) => {
-  console.log({ pages });
+const Navbar = ({ pages, title }) => {
+  const [showAlertBar, setShowAlertBar] = useState(true);
+
+  const router = useRouter();
+
+  const handleClose = () => setShowAlertBar(false);
+
   return (
-    <Box fullWidth direction="column">
-      <TopBar />
-      <Box direction="row" height={100} fullWidth>
+    <Box
+      fullWidth
+      direction="column"
+      shadow={1}
+      position="sticky"
+      margin="0px 0px 16px 0px"
+    >
+      <Flex />
+      {showAlertBar && (
+        <Banner color="danger">
+          <Typography variant="subtitle1" color="light" style={{ flexGrow: 1 }}>
+            Covid help
+          </Typography>
+          <Button onClick={handleClose} color="light" variant="text">
+            <i className="fas fa-times"></i>
+          </Button>
+        </Banner>
+      )}
+      <Banner color="primary">
+        <Typography variant="body" color="light" style={{ flexGrow: 1 }}>
+          (314) 724 0839
+        </Typography>
+        <Box
+          direction="row"
+          align="center"
+          justify="space-evenly"
+          color="primary"
+          margin="0px 8px"
+        >
+          {socials.map(({ name, url }) => {
+            return (
+              <NextLink href={url} target="_blank" key={name}>
+                <i
+                  style={{ margin: 8, color: "white" }}
+                  className={`fab fa-${name}`}
+                ></i>
+              </NextLink>
+            );
+          })}
+        </Box>
+      </Banner>
+      <Box
+        direction="row"
+        height={100}
+        fullWidth
+        align="center"
+        justify="space-evenly"
+        margin="0px 8px"
+      >
         <Logo size="big" />
-        <Box grow={1} height={100}>
+        <Box grow={1} justify="flex-start">
           {pages.map((page) => {
             return (
-              <Typography variant="button">
-                <Link key={page.title} href={page.url}>
-                  {page.title}
-                </Link>
-              </Typography>
+              <NavLink
+                selected={router.pathname === page.url}
+                size="large"
+                button
+                href={page.url || "/"}
+                variant={page.variant || "text"}
+                color={page.color || "primary"}
+              >
+                {page.title}
+              </NavLink>
             );
           })}
         </Box>

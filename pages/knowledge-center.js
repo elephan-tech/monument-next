@@ -1,5 +1,5 @@
 import React from "react";
-import Page from "../components/page/Page";
+import Page from "../components/Page";
 
 const knowledgeCenter = () => {
   return <Page title="knowledge">knowledge</Page>;

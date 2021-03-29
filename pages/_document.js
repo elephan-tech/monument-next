@@ -1,19 +1,39 @@
 import Document, { Head, Html, Main, NextScript } from "next/document";
 import { ServerStyleSheet } from "styled-components";
+import getLangFromReq from "../utils/fromReq";
 
-export default class MyDocument extends Document {
-  static getInitialProps({ renderPage }) {
+class MyDocument extends Document {
+  static async getInitialProps(ctx) {
+    const lang = getLangFromReq(ctx.req);
     const sheet = new ServerStyleSheet();
-    const page = renderPage((App) => (props) =>
-      sheet.collectStyles(<App {...props} />)
-    );
-    const styleTags = sheet.getStyleElement();
-    return { ...page, styleTags };
+    const originalRenderPage = ctx.renderPage;
+
+    try {
+      ctx.renderPage = () =>
+        originalRenderPage({
+          enhanceApp: (App) => (props) =>
+            sheet.collectStyles(<App {...props} />),
+        });
+
+      const initialProps = await Document.getInitialProps(ctx);
+      return {
+        ...initialProps,
+        lang,
+        styles: (
+          <>
+            {initialProps.styles}
+            {sheet.getStyleElement()}
+          </>
+        ),
+      };
+    } finally {
+      sheet.seal();
+    }
   }
 
   render() {
     return (
-      <Html lang="en">
+      <Html lang={this.props.lang}>
         <Head>
           {this.props.styleTags}
           <script
@@ -29,3 +49,5 @@ export default class MyDocument extends Document {
     );
   }
 }
+
+export default MyDocument;

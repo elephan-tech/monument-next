@@ -24,11 +24,11 @@ const getFontSize = (variant) => {
     caption: generateStyles(12, "normal", 0.4),
     overline: generateStyles(10, "normal", 1.5, "uppercase"),
   };
-  return styles[variant];
+  return styles[variant || "body"];
 };
 
 export default styled.p((props) => ({
   fontFamily: props.theme.font.family,
-  color: props.color,
+  color: props.theme.colors[props.color || "primary"][props.shade || "main"],
   ...getFontSize(props.variant),
 }));
