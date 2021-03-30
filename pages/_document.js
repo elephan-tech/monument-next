@@ -38,7 +38,7 @@ class MyDocument extends Document {
           {this.props.styleTags}
           <script
             src="https://kit.fontawesome.com/ad576128a8.js"
-            crossorigin="anonymous"
+            crossOrigin="anonymous"
           ></script>
         </Head>
         <body>
