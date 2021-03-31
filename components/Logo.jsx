@@ -1,20 +1,18 @@
 import Image from "next/image";
-import Link from "next/link";
-import React from "react";
-import Box from "./Box";
+import { Box } from "rebass";
+import Link from "./link";
 
-const Logo = ({ size }) => {
-  const sizes = { big: { height: 100, width: "auto" } }[size];
+const Logo = (props) => {
+  const { ...boxProps } = props;
   return (
-    <Box grow={1}>
-      <Link href="/">
-        <Image
-          src="/monument_logo.png"
-          alt="Monument Academy Logo"
-          {...sizes}
-        />
-      </Link>
-    </Box>
+    <Link url="/">
+      <Image
+        src="/monument_logo.png"
+        alt="Monument Academy Logo"
+        width="auto"
+        height="100px"
+      />
+    </Link>
   );
 };
 

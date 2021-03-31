@@ -2,15 +2,23 @@ import { css } from "styled-components";
 import theme from "../theme";
 
 export default css`
-  html,
+  *,
+  *::after,
+  *::before {
+    box-sizing: inherit;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
-    background-color: ${theme.colors.mineShaft};
-    color: ${theme.colors.light};
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -webkit-tap-highlight-color: transparent;
-    -moz-osx-font-smoothing: grayscale;
+    box-sizing: border-box;
+    margin: 0;
+    width: 100vw;
     overflow-x: hidden;
-    width: 100%;
+    font-family: ${theme.fonts.body};
+    background: ${theme.colors.background};
+    color: ${theme.colors.text};
   }
 `;

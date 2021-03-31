@@ -1,64 +1,64 @@
 export default [
   {
-    title: "About Us",
+    name: "About Us",
     url: "/about",
     subpages: [
       {
-        title: "Mission, Values, Philosophy",
+        name: "Mission, Values, Philosophy",
         url: "/mission-values-philosophy",
       },
       {
-        title: "Team",
+        name: "Team",
         url: "/team",
       },
       {
-        title: "Board of Directors",
+        name: "Board of Directors",
         url: "/board-of-directors",
       },
       {
-        title: "Partnerships",
+        name: "Partnerships",
         url: "/partnerships",
       },
       {
-        title: "Awards",
+        name: "Awards",
         url: "/awards",
       },
       {
-        title: "News & Media",
+        name: "News & Media",
         url: "/news-and-media",
       },
       {
-        title: "Donate",
+        name: "Donate",
         url: "/donate",
       },
       {
-        title: "Contact Us",
+        name: "Contact Us",
         url: "/contact",
       },
     ],
   },
   {
-    title: "Our Programs",
+    name: "Our Programs",
     url: "/programs",
   },
   {
-    title: "Enrollment",
+    name: "Enrollment",
     url: "/enrollment",
   },
   {
-    title: "Careers",
+    name: "Careers",
     url: "/careers",
   },
   {
-    title: "Knowledge Center",
+    name: "Knowledge Center",
     url: "/knowledge-center",
   },
   {
-    title: "Family Resources",
+    name: "Family Resources",
     url: "/family-resources",
   },
   {
-    title: "Donate",
+    name: "Donate",
     url: "/donate",
     variant: "filled",
     color: "secondary",

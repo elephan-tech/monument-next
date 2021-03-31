@@ -9,6 +9,15 @@ const Meta = ({ title, description }) => {
       <link rel="icon" href="/favicon.ico" />
       <link rel="manifest" href="/manifest.json" />
       <link
+        href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;600&display=swap"
+        rel="stylesheet"
+      />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+        rel="stylesheet"
+      />
+
+      <link
         href="/favicon-16x16.png"
         rel="icon"
         type="image/png"
