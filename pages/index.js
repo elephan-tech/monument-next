@@ -18,7 +18,7 @@ export default function Home() {
         </div>
       </Section>
       <Section
-        backgroundImage="/49003931318_f68d9729f2_c.jpeg"
+        backgroundImage="/bg_home_section2.jpeg"
         backgroundPosition="center"
         backgroundSize="cover"
       >
