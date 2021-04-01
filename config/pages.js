@@ -60,7 +60,7 @@ export default [
   {
     name: "Donate",
     url: "/donate",
-    variant: "filled",
+    component: "button",
     color: "secondary",
   },
 ];

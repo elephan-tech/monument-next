@@ -1,3 +1,6 @@
+import Container from "@material-ui/core/Container";
+import Fab from "@material-ui/core/Fab";
+import EditIcon from "@material-ui/icons/CalendarTodayOutlined";
 import React from "react";
 import pages from "../config/pages";
 import Meta from "./Meta";
@@ -6,9 +9,15 @@ import Navbar from "./navbar";
 const Page = ({ children, title, description = "" }) => {
   return (
     <>
-      <Navbar pages={pages} title={title}></Navbar>
       <Meta title={title} description={description} />
-      {children}
+      <Navbar pages={pages} title={title}></Navbar>
+
+      <Container maxWidth="xl" disableGutters>
+        <Fab color="secondary" aria-label="calendar" size="large">
+          <EditIcon />
+        </Fab>
+        {children}
+      </Container>
     </>
   );
 };

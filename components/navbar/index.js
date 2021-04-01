@@ -1,93 +1,82 @@
-import NextLink from "next/link";
-import { useRouter } from "next/router";
-import { useState } from "react";
+import { AppBar, Box, Hidden } from "@material-ui/core";
+import IconButton from "@material-ui/core/IconButton";
+import Toolbar from "@material-ui/core/Toolbar";
+import Typography from "@material-ui/core/Typography";
+import MenuIcon from "@material-ui/icons/Menu";
+import React, { useState } from "react";
 import socials from "../../config/socials";
-import Box from "../Box";
-import Button from "../Button";
+import Link from "../link";
 import Logo from "../Logo";
-import NavLink from "../NavLink";
-import Typography from "../Typography";
-import Banner from "./Banner";
+import useStyles, { Banner } from "./styles";
 
-const Navbar = ({ pages, title }) => {
-  const [showAlertBar, setShowAlertBar] = useState(true);
-
-  const router = useRouter();
-
-  const handleClose = () => setShowAlertBar(false);
+const Navbar = ({ pages }) => {
+  const classes = useStyles();
+  const [showAlert, setShowAlert] = useState(false);
+  const [alertMessage, setAlertMessage] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
 
   return (
-    <Box
-      fullWidth
-      direction="column"
-      shadow={1}
-      position="sticky"
-      margin="0px 0px 16px 0px"
-    >
-      {showAlertBar && (
-        <Banner color="danger" grow={1}>
-          <Typography variant="subtitle1" color="light" style={{ flexGrow: 1 }}>
-            Covid help
-          </Typography>
-          <Button onClick={handleClose} color="light" variant="text">
-            <i className="fas fa-times"></i>
-          </Button>
+    <AppBar position="fixed" color="default">
+      {showAlert && alertMessage && (
+        <Banner variant="dense" color="danger">
+          {alertMessage}
         </Banner>
       )}
-      <Banner color="primary" grow={1}>
-        <Typography variant="body" color="light" style={{ flexGrow: 1 }}>
-          (314) 724 0839
+      <Banner variant="dense" color="primary">
+        <Typography variant="overline">
+          {phoneNumber || "1233131231"}
         </Typography>
-        <Box
-          direction="row"
-          align="center"
-          justify="space-evenly"
-          color="primary"
-          margin="0px 8px"
-        >
-          {socials.map(({ name, url }) => {
-            return (
-              <NextLink href={url} target="_blank" key={name}>
-                <i
-                  style={{ margin: 8, color: "white" }}
-                  className={`fab fa-${name}`}
-                ></i>
-              </NextLink>
-            );
-          })}
-        </Box>
+
+        <div>
+          {socials.map(({ name, url }) => (
+            <Link
+              key={name}
+              href={url}
+              target="_blank"
+              rel="noreferrer"
+              color="inherit"
+              component="span"
+            >
+              <i className={`fab fa-${name}`} aria-hidden />
+            </Link>
+          ))}
+        </div>
       </Banner>
-      <Box
-        direction="row"
-        height={100}
-        fullWidth
-        align="center"
-        justify="space-evenly"
-        margin="0px 8px"
-        grow={2}
-      >
-        <Logo size="big" />
-        <Box grow={1} justify="flex-start">
-          {pages.map((page) => {
-            return (
-              <>
-                <Link key={page.title} href={page.url}>
-                <NavLink
-                  selected={router.pathname === page.url}
-                  size="large"
-                  button
-                  href={page.url || "/"}
-                  variant={page.variant || "text"}
-                  color={page.color || "primary"}
+      <Toolbar>
+        <Logo className={classes.title} />
+        <Hidden implementation="css" mdDown>
+          <Box
+            display="flex"
+            flexDirection="row"
+            justifyContent="space-evenly"
+            alignItems="center"
+          >
+            {pages.map((page) => {
+              return (
+                <Link
+                  key={page.name}
+                  href={page.url}
+                  component={page.component || "a"}
+                  bg={page.color || ""}
                 >
-                  {page.title}
-                </NavLink>
-              </>
-            );
-          })}
-        </Box>
-      </Box>
-    </Box>
+                  {page.name}
+                </Link>
+              );
+            })}
+          </Box>
+        </Hidden>
+        <Hidden implementation="css" only={["lg", "xl"]}>
+          <IconButton
+            edge="start"
+            className={classes.menuButton}
+            color="inherit"
+            aria-label="menu"
+          >
+            <MenuIcon />
+          </IconButton>
+        </Hidden>
+      </Toolbar>
+    </AppBar>
   );
 };
 

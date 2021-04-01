@@ -1,17 +1,25 @@
-import styled from "styled-components";
-import Headroom from "react-headroom";
-import { Flex } from "rebass/styled-components";
+import React from "react";
+import { makeStyles, styled } from "@material-ui/core/styles";
+import Toolbar from "@material-ui/core/Toolbar";
 
-export const NavContainer = styled(Headroom)`
-  * {
-    transition: background-color 0.1s ease;
-  }
+export const Banner = styled(Toolbar)((props) => ({
+  background: props.theme.palette[props.color].main,
+  color: "white",
+  height: 30,
+  padding: "0 30px",
+  display: "flex",
+  justifyContent: "space-between",
+  alignItems: "center",
+}));
 
-  .headroom--pinned {
-    background-color: ${({ theme }) => theme.colors.light};
-    box-shadow: ${({ theme }) => theme.shadow(1)};
-  }
-  background-color: ${({ theme }) => theme.colors.light};
-  box-shadow: ${({ theme }) => theme.shadow(1)};
-  width: 100%;
-`;
+export default makeStyles((theme) => ({
+  root: {
+    flexGrow: 1,
+  },
+  menuButton: {
+    marginRight: theme.spacing(2),
+  },
+  title: {
+    flexGrow: 1,
+  },
+}));

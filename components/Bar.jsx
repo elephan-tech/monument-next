@@ -1,5 +1,4 @@
 import React from "react";
-import { Flex } from "rebass/styled-components";
 
 const Bar = (props) => {
   const { children, ...flexProps } = props;

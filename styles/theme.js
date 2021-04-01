@@ -1,19 +1,19 @@
-import {
-  baseFontSize,
-  breakpoints,
-  container,
-  gridSize,
-  gutterWidth,
-  outerMargin,
-} from "../config/flexgrid";
+import { createMuiTheme, responsiveFontSizes } from "@material-ui/core/styles";
+import base from "./base";
 
-export default {
-  font: {
-    family: "Roboto, sans-serif",
-    size: "14px",
-    heigth: "20px",
+console.log({ base });
+
+const theme = createMuiTheme({
+  typography: {
+    fontFamily: '"Cabin", "Open Sans", Roboto, sans-serif',
+    fontStyle: "normal",
+    fontWeightLight: 400,
+    fontWeightRegular: 500,
+    fontWeightBold: 700,
+    fontSize: 16,
   },
-  colors: {
+  palette: {
+    type: "light",
     primary: {
       main: "#042f54",
     },
@@ -23,33 +23,27 @@ export default {
     accent: {
       main: "#e8e8e8",
     },
-
-    danger: "#d50000",
-    success: "#0b9900",
-    info: "#008def",
-    warning: "#ffe100",
-
-    light: "#fff",
-    medium: "#a4a4a4",
-    dark: "#242424",
+    danger: { main: "#d50000" },
+    success: { main: "#0b9900" },
+    info: { main: "#008def" },
+    warning: { main: "#ffe100" },
+    light: { main: "#fff" },
   },
-  unit: (x) => 8 * x || 8,
-  shadow: (x) => `0px ${5 * x}px 10px -1px #a4a4a4`,
-  flexboxgrid: {
-    gridSize, // columns
-    gutterWidth: gutterWidth / baseFontSize, // rem
-    outerMargin: outerMargin / baseFontSize, // rem
-    mediaQuery: "only screen",
-    container: {
-      sm: container.sm / baseFontSize, // rem
-      md: container.md / baseFontSize, // rem
-      lg: container.lg / baseFontSize, // rem
+  overrides: {
+    MuiCssBaseline: {
+      "@global": {
+        ...base,
+      },
     },
-    breakpoints: {
-      xs: breakpoints.xs / baseFontSize, // em
-      sm: breakpoints.sm / baseFontSize, // em
-      md: breakpoints.md / baseFontSize, // em
-      lg: breakpoints.lg / baseFontSize, // em
+    MuiToolbar: {
+      dense: {
+        minHeight: 30,
+      },
+    },
+    MuiLink: {
+      underlineNone: true,
     },
   },
-};
+});
+
+export default responsiveFontSizes(theme);
