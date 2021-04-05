@@ -1,24 +1,15 @@
 import { any, string } from "prop-types";
 import React from "react";
-import { SectionContainer } from "./styles";
+import useStyles from "./styles";
 
 const Section = ({ children, ...props }) => {
+  console.log(props)
+  const classes = useStyles(props)
   return (
-    <SectionContainer
-      {...props}
-      stlye={{ marginTop: 100 }}
-      backgroundRepeat="no-repeat"
-    >
-      {props.children}
-    </SectionContainer>
+    <section className={classes.root}>
+      {children}
+    </section>
   );
-};
-
-Section.propTypes = {
-  children: any,
-  title: string,
-  backgroundImage: string,
-  position: string,
 };
 
 export default Section;
