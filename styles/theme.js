@@ -1,7 +1,6 @@
 import { createMuiTheme, responsiveFontSizes } from "@material-ui/core/styles";
 import base from "./base";
 
-console.log({ base });
 
 const theme = createMuiTheme({
   typography: {

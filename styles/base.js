@@ -14,6 +14,7 @@ export default {
   },
 
   body: {
+    fontFamily: 'Oswald',
     boxSizing: "border-box",
     margin: 0,
     width: "100vw",
