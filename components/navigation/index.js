@@ -4,7 +4,9 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import MenuIcon from "@material-ui/icons/Menu";
 import React, { useState } from "react";
+import HideOnScroll from "../../animations/HideOnScroll";
 import socials from "../../config/socials";
+import Drawer from "../drawer";
 import Link from "../link";
 import Logo from "../Logo";
 import useStyles, { Banner } from "./styles";
@@ -16,6 +18,8 @@ const Navbar = ({ pages }) => {
   const [phoneNumber, setPhoneNumber] = useState("");
 
   return (
+    <>
+      <HideOnScroll>
     <AppBar position="fixed" color="default">
       {showAlert && alertMessage && (
         <Banner variant="dense" color="danger">
@@ -59,24 +63,20 @@ const Navbar = ({ pages }) => {
                   component={page.component || "a"}
                   bg={page.color || ""}
                 >
-                  {page.name}
+                 <div style={{ margin: "auto" }}>{page.name}</div>
                 </Link>
               );
             })}
           </Box>
         </Hidden>
         <Hidden implementation="css" only={["lg", "xl"]}>
-          <IconButton
-            edge="start"
-            className={classes.menuButton}
-            color="inherit"
-            aria-label="menu"
-          >
-            <MenuIcon />
-          </IconButton>
+         <Drawer items={pages}></Drawer>
         </Hidden>
       </Toolbar>
     </AppBar>
+    </HideOnScroll>
+</>
+
   );
 };
 
