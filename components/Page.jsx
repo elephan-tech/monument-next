@@ -1,7 +1,8 @@
 import React from "react";
 import pages from "../config/pages";
 import Meta from "./Meta";
-import Navbar from "./navbar";
+import Navbar from "./navigation";
+import Footer from "./footer";
 
 const Page = ({ children, title, description = "" }) => {
   return (
@@ -10,6 +11,7 @@ const Page = ({ children, title, description = "" }) => {
       <Navbar pages={pages} title={title}></Navbar>
 
       {children}
+      <Footer/>
     </>
   );
 };
