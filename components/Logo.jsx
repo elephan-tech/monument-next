@@ -9,8 +9,13 @@ const Logo = (props) => {
         <Image
           src="/monument_logo.png"
           alt="Monument Academy Logo"
-          width="auto"
-          height="100px"
+          width="100%"
+          height="auto"
+          style={{
+            maxWidth: '300px',
+            minWidth: '150px',
+            position: 'relative',
+          }}
         />
       </Link>
     </div>

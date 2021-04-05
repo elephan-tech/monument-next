@@ -1,10 +1,11 @@
 import { createMuiTheme, responsiveFontSizes } from "@material-ui/core/styles";
+import { upperCase } from "lodash";
 import base from "./base";
 
 
 const theme = createMuiTheme({
   typography: {
-    fontFamily: '"Cabin", "Open Sans", Roboto, sans-serif',
+    fontFamily: '"Cabin", "Open Sans", Roboto, sans-serif, "Montserrat", "Oswald"',
     fontStyle: "normal",
     fontWeightLight: 400,
     fontWeightRegular: 500,
@@ -42,6 +43,25 @@ const theme = createMuiTheme({
     },
     MuiLink: {
       underlineNone: true,
+    },
+    MuiTypography: {
+      h1: {color: 'blue',fontFamily:'"Oswald", sans-serif',fontWeight:'bold'},
+      h2: {color: 'blue',fontFamily:'"Montserrat", sans-serif',fontWeight:500,textTransform:'upperCase',},
+      h3: {color: 'blue',fontFamily:'"Montserrat", sans-serif',fontWeight:500},
+      p: {color: 'blue',fontFamily:'"Montserrat", sans-serif',fontWeight:500},
+      variantMapping: {
+        h1: 'h1',
+        h2: 'h2',
+        h3: 'h3',
+        h4: 'h4',
+        h5: 'h5',
+        h6: 'h6',
+        subtitle1: 'h2',
+        subtitle2: 'h2',
+        body1: 'p',
+        body2: 'span',
+      },
+
     },
   },
 });
