@@ -2,7 +2,7 @@ export default [
   {
     name: "About Us",
     url: "/about",
-    subpages: [
+    items: [
       {
         name: "Mission, Values, Philosophy",
         url: "/mission-values-philosophy",
@@ -40,6 +40,14 @@ export default [
   {
     name: "Our Programs",
     url: "/programs",
+    items: [
+      {name: 'A Day  at Monument Academy', url:'/programs/day-at-monument'},
+      {name: 'Academics', url:'/programs/academics'},
+      {name: 'Well-Being', url:'/programs/well-being'},
+      {name: 'Life Skills', url:'/programs/life-skills'},
+      {name: 'Boarding & Student Life Program', url:'/programs/boarding-and-student-life'},
+      {name: 'National School Lunch Program', url:'/programs/national-school-lunch-program'},
+    ]
   },
   {
     name: "Enrollment",
