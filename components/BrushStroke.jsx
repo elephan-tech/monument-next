@@ -6,10 +6,9 @@ const BrushStroke = (props) => (
     id="Layer_1"
     data-name="Layer 1"
     xmlns="http://www.w3.org/2000/svg"
-    fill={getColor(props.fill)}
+    fill={getColor(props.fill || 'primary')}
     viewBox="0 0 143.74 218.64"
     height="200px"
-    style={{ backgroundColor: "none", minWidth: "500px", width: "auto" }}
   >
     <svg>
       <title>brush-stroke</title>
@@ -27,7 +26,6 @@ const BrushStroke = (props) => (
       y="50%"
       fill="#042F54"
       fontWeight="bold"
-      fontSize="4em"
       dominantBaseline="middle"
       textAnchor="middle"
     >
