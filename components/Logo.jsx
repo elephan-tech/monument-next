@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Link from "./link";
+import Link from "./Link";
 
 const Logo = (props) => {
   const { ...boxProps } = props;

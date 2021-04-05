@@ -4,11 +4,15 @@ import {makeStyles} from '@material-ui/core/styles'
 const UnderlineStroke = ({fill ="accent"}) => {
   const styles = makeStyles(theme => ({
     svg: {
+      maxWidth: 160,
       width: '50%',
       margin: 8
     },
     path:{
       fill: theme.palette[fill].main
+    },
+    line: {
+      fill: 'none'
     }
   }))
   console.log({styles})
@@ -81,7 +85,7 @@ const UnderlineStroke = ({fill ="accent"}) => {
       transform="translate(-21.07 -359.22)" />
     <path id="Path_27" data-name="Path 27" className={classes.path} d="M441.65,370.66l3.73,1.72-2.58-2.5Z"
       transform="translate(-21.07 -359.22)" />
-    <line id="Line_3" data-name="Line 3" class="cls-2" x1="377.82" y1="39.57" x2="378.64" y2="43.25" />
+    <line id="Line_3" data-name="Line 3" className={classes.line} x1="377.82" y1="39.57" x2="378.64" y2="43.25" />
     <path id="Path_28" data-name="Path 28" className={classes.path}
       d="M428,373.22l8.3-2-7.84-.17c-4.25,2.55-1.85,3.11,1.59,3.46A2.78,2.78,0,0,1,428,373.22Z"
       transform="translate(-21.07 -359.22)" />

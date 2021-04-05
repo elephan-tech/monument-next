@@ -2,11 +2,11 @@ import { any, string } from "prop-types";
 import React from "react";
 import useStyles from "./styles";
 
-const Section = ({ children, ...props }) => {
+const Section = ({ children, id, ...props }) => {
   console.log(props)
   const classes = useStyles(props)
   return (
-    <section className={classes.root}>
+    <section id={id} className={classes.root}>
       {children}
     </section>
   );

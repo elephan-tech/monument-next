@@ -1,8 +1,8 @@
 import React from "react";
 import pages from "../config/pages";
 import Meta from "./Meta";
-import Navbar from "./navigation";
-import Footer from "./footer";
+import Navbar from "./Navigation";
+import Footer from "./Footer";
 
 const Page = ({ children, title, description = "" }) => {
   return (

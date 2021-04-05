@@ -3,6 +3,7 @@ import { makeStyles, styled } from "@material-ui/core/styles";
 
 export default makeStyles((theme) => ({
   root: {
+    padding: theme.spacing(6), 
     flexGrow: 1,
     height: "80vh",
     display: "flex",

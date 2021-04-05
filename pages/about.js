@@ -1,6 +1,6 @@
 import React from "react";
 import Page from "../components/Page";
-import Section from '../components/section';
+import Section from '../components/Section';
 
 const brushStrokeProps  = { 
   word: 'A Home',

@@ -10,6 +10,7 @@ const theme = createMuiTheme({
     fontWeightRegular: 500,
     fontWeightBold: 700,
     fontSize: 16,
+    
   },
   palette: {
     type: "light",
