@@ -28,6 +28,7 @@ const useStyles = makeStyles(
       },
     },
     button: {
+      textAlign: "center",
       borderRadius: 8,
       background: (props) => theme.palette[props.bg || "primary"].main,
       "&:hover": {

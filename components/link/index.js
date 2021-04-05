@@ -5,7 +5,6 @@ import useStyles from "./styles";
 
 const Link = ({ children, decoration, href, ...linkProps }) => {
   const classes = useStyles(linkProps);
-  console.log(linkProps.component || "a");
   return (
     <>
       <NextLink href={href || "/"} passHref>
