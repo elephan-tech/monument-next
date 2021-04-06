@@ -1,19 +1,19 @@
+import _camelCase from "lodash/camelCase;";
 import Page from "../components/Page";
 import Section from "../components/Section";
-import homeSections from '../sections/home';
-import _ from 'lodash';
+import homeSections from "../sections/home";
 
 export default function Home() {
-  console.log({homeSections})
+  console.log({ homeSections });
   return (
     <Page title="Home">
-      {homeSections.map(({title, component, props, styles})=> {
+      {homeSections.map(({ title, component, props, styles }) => {
         return (
-          <Section key={title} id={_.camelCase(title)}{...props} style={styles}>
-           {component({title})}
+          <Section key={title} id={_camelCase(title)} {...props} style={styles}>
+            {component({ title })}
           </Section>
-      )
-      } )}
+        );
+      })}
     </Page>
   );
 }
