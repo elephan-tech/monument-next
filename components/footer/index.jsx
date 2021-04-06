@@ -40,9 +40,9 @@ export default function Footer() {
               Washington, DC 20002</p>
               <p>(202) 545-3180</p>
               <p>Fax: (202) 478-2824</p>
-              <h2>Legal</h2>
-              <Link href="/" display="block">
-                Privacy policy.
+              <h2 className={classes.footerTitle}>Legal</h2>
+              <Link href="/" display="block" className={classes.linkFooter}>
+                <a>Privacy policy.</a>
               </Link>
             </Grid>
             <Grid className={classes.gridBox}>
