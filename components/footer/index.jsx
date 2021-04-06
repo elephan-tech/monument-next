@@ -8,11 +8,13 @@ import { Grid } from '@material-ui/core';
 import Image from "next/image";
 import socials from "../../config/socials";
 
+
 function Copyright({website}) {
+  const classes = useStyles();
   return (
     <Typography variant="body2" color="#fff">
       {'Copyright © '}
-      <Link color="#fff" href="https://material-ui.com/">
+      <Link color="#fff" href="/"  className={classes.footerLink}>
         {website || 'company'}
       </Link>{' '}
       {new Date().getFullYear()}
@@ -27,7 +29,7 @@ export default function Footer() {
 
   return (
       <footer className={classes.footer}>
-        <Container maxWidth="bg"  className={classes.footerContainer}>
+        <Container maxWidth="xl"  className={classes.footerContainer}>
           <Grid className={classes.footerContainer}
             container
             direction="row"
@@ -36,9 +38,9 @@ export default function Footer() {
           >
             <Grid className={classes.gridBox}>
               <h2 className={classes.footerTitle}>Contact Us</h2> 
-              <p>500 19th Street NE,<br></br> 
+              <p><i class="fas fa-map-marked-alt" style={{color:'#fec300'}}></i> 500 19th Street NE,<br></br> 
               Washington, DC 20002</p>
-              <p>(202) 545-3180</p>
+              <p><i class="fas fa-mobile" style={{color:'#fec300'}}></i> (202) 545-3180</p>
               <p>Fax: (202) 478-2824</p>
               <h2 className={classes.footerTitle}>Legal</h2>
               <Link href="/" display="block" className={classes.linkFooter}>
@@ -68,8 +70,8 @@ export default function Footer() {
               <Image
                 src="/monument_logo-short.png"
                 alt="Monument Academy Logo"
-                width="100%"
-                height="auto"
+                width={200}
+                height={270}
                 position="relative"
                 style={{
                   maxWidth: '300px',
@@ -80,6 +82,7 @@ export default function Footer() {
             </Link>
             </Grid>
             <Grid className={classes.gridBox}>
+              <h2 className={classes.footerTitle}>Stay Connected</h2>
               <div>
                 {socials.map(({ name, url }) => (
                   <Link
@@ -90,7 +93,7 @@ export default function Footer() {
                     color="inherit"
                     component="span"
                   >
-                    <i className={`fab fa-${name}`} aria-hidden />
+                    <i className={`fab fa-${name}`} aria-hidden style={{fontSize: '30px',marginRight:'16px'}}/>
                   </Link>
                 ))}
               </div>

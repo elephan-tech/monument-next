@@ -9,8 +9,8 @@ const Logo = (props) => {
         <Image
           src="/monument_logo.png"
           alt="Monument Academy Logo"
-          width="100%"
-          height="auto"
+          width={220}
+          height={80}
           style={{
             maxWidth: '300px',
             minWidth: '150px',

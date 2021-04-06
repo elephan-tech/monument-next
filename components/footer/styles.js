@@ -14,10 +14,17 @@ const useStyles = makeStyles((theme) => ({
     textTransform: 'uppercase',
     fontWeight: '500',
   },
-  linkFooter: {color:'#ffffff',display:'block',paddingTop:'12px',paddingBottom:'12px'},
+  linkFooter: {
+    color:'#ffffff',
+    display:'block',
+    paddingTop:'12px',
+    paddingBottom:'12px', 
+    '&visited' : {color:'#f30hff'},//doesn't work
+    '&hover' : {color:'red'},//doesn't work
+  },
   //'linkFooter&:visited': {color:'#ffffff'},
   gridBox: {padding:'16px',minWidth: '200px',},
-  darkerBlue: {width:'100%',padding:'16px',textAlign:'center',color: '#ffffff!important',backgroundColor:'#02213B',}
+  darkerBlue: {width:'100%',padding:'16px',textAlign:'center',color: '#ffffff!important',backgroundColor:'#02213B',},
 }));
 
 export default useStyles
