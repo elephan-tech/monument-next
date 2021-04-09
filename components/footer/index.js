@@ -46,7 +46,7 @@ export default function Footer() {
           <Heading variant="h4" color="inherit" decoration="light">
             About Us
           </Heading>
-          <Typography variant="subtitle1">
+          <Typography variant="body1">
             Monument Academy is a weekday boarding school serving students in
             Washington, DC. Our mission is to provide students, particularly
             those who have had or might have contact with the foster care

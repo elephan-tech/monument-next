@@ -20,4 +20,5 @@ export default {
     width: "100vw",
     overflowX: "hidden",
   },
+  sectionContainer: { width: "90%", margin: "auto" },
 };
