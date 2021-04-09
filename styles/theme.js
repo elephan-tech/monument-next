@@ -1,17 +1,14 @@
 import { createMuiTheme, responsiveFontSizes } from "@material-ui/core/styles";
-import { upperCase } from "lodash";
 import base from "./base";
-
 
 const theme = createMuiTheme({
   typography: {
-    fontFamily: '"Cabin", "Open Sans", Roboto, sans-serif, "Montserrat", "Oswald"',
+    fontFamily: '"Helvetica", "Open Sans", Roboto, sans-serif',
     fontStyle: "normal",
     fontWeightLight: 400,
     fontWeightRegular: 500,
     fontWeightBold: 700,
     fontSize: 16,
-    
   },
   palette: {
     type: "light",
@@ -31,6 +28,16 @@ const theme = createMuiTheme({
     light: { main: "#fff" },
   },
   overrides: {
+    MuiButton: {
+      root: { borderRadius: 7 },
+      containedSizeLarge: {
+        fontFamily: "'Segoe UI', sans-serif",
+        fontWeight: "bold",
+        fontSize: 18,
+        width: "20%",
+        padding: 16,
+      },
+    },
     MuiCssBaseline: {
       "@global": {
         ...base,
@@ -45,23 +52,71 @@ const theme = createMuiTheme({
       underlineNone: true,
     },
     MuiTypography: {
-      h1: {color: 'blue',fontFamily:'"Oswald", sans-serif',fontWeight:'bold'},
-      h2: {color: 'blue',fontFamily:'"Montserrat", sans-serif',fontWeight:500,textTransform:'upperCase',},
-      h3: {color: 'blue',fontFamily:'"Montserrat", sans-serif',fontWeight:500},
-      p: {color: 'blue',fontFamily:'"Montserrat", sans-serif',fontWeight:500},
-      variantMapping: {
-        h1: 'h1',
-        h2: 'h2',
-        h3: 'h3',
-        h4: 'h4',
-        h5: 'h5',
-        h6: 'h6',
-        subtitle1: 'h2',
-        subtitle2: 'h2',
-        body1: 'p',
-        body2: 'span',
+      h1: {
+        color: "primary",
+        fontFamily: '"Oswald", sans-serif',
+        fontWeight: "bold",
+        textAlign: "right",
+        fontSize: 77,
+        letterSpacing: 0,
+        opacity: 1,
       },
-
+      h2: {
+        textAlign: "left",
+        fontFamily: '"Oswald", sans-serif',
+        fontWeight: "bold",
+        fontSize: 48,
+        letterSpacing: 0,
+        opacity: 1,
+      },
+      h3: {
+        color: "primary",
+        fontFamily: '"Segoe UI", sans-serif',
+        fontWeight: "normal",
+        fontSize: 38,
+      },
+      h4: {
+        color: "primary",
+        fontFamily: "'Helvetica', sans-serif",
+        fontWeight: "bold",
+        textTransform: "uppercase",
+        fontSize: 20,
+      },
+      h5: {
+        textAlign: "left",
+        fontFamily: "'Montserrat', sans-serif",
+        fontWeight: "bold",
+        fontSize: 32,
+        letterSpacing: 0,
+        opacity: 1,
+        lineHeight: 1.48,
+      },
+      button: {
+        textAlign: "left",
+        fontFamily: '"Segoe UI", sans-serif',
+        fontWeight: "bold",
+        fontSize: "18px",
+        letterSpacing: 0,
+        opacity: 1,
+        textTransform: "capitalize",
+      },
+      subtitle1: {
+        fontFamily: "'Helvetica', sans-serif",
+        fontWeight: "lighter",
+        fontSize: 11,
+        textTransform: "capitalize",
+      },
+      body1: {
+        textAlign: "left",
+        fontFamily: '"Montserrat", sans-serif',
+        fontSize: 16,
+        fontWeight: "normal",
+        letterSpacing: 0,
+        opacity: 1,
+      },
+      body2: {
+        fontWeight: "bold",
+      },
     },
   },
 });

@@ -1,18 +1,23 @@
-import { Typography } from '@material-ui/core'
-import React from 'react'
-import useStyles from './styles'
-import UnderlineStroke from '../UnderlineStroke'
+import { UnderlineStroke } from "@components";
+import { Typography } from "@material-ui/core";
+import React from "react";
+import useStyles from "./styles";
 
-const Heading = ({children, decoration='', variant='h3', color ='primary'}) => {
-  const classes = useStyles({decoration})
+const Heading = ({
+  children,
+  decoration = "",
+  variant = "h3",
+  color = "primary",
+}) => {
+  const classes = useStyles({ decoration });
   return (
-    <>
-    <Typography variant={variant}  color={color}>
-      {children}
-    </Typography>
-    {decoration ? <UnderlineStroke fill={decoration}/> : null}
-    </>
-  )
-}
+    <div className={classes.heading}>
+      <Typography variant={variant} color={color}>
+        {children}
+      </Typography>
+      {decoration ? <UnderlineStroke fill={decoration} /> : null}
+    </div>
+  );
+};
 
-export default Heading
+export default Heading;

@@ -3,7 +3,7 @@ import NextLink from "next/link";
 import React from "react";
 import useStyles from "./styles";
 
-const Link = ({ children, decoration, href, ...linkProps }) => {
+const Link = ({ children, decoration, href, variant, ...linkProps }) => {
   const classes = useStyles(linkProps);
   return (
     <>
@@ -13,15 +13,12 @@ const Link = ({ children, decoration, href, ...linkProps }) => {
           color={linkProps.color}
           target={linkProps.target}
           component={linkProps.component}
-          bg={linkProps.bg || "none"}
+          className={`${
+            linkProps.component !== "span" ? classes.linkBase : ""
+          } ${classes[linkProps.component]}`}
+          variant={variant || "inherit"}
         >
-          <div
-            className={`${linkProps.component !== "span" && classes.linkBase} ${
-              classes[linkProps.component || "a"]
-            }`}
-          >
-            {children}
-          </div>
+          {children}
         </MuiLink>
       </NextLink>
     </>

@@ -2,12 +2,11 @@ import { makeStyles } from "@material-ui/core/styles";
 
 export default makeStyles((theme) => ({
   root: {
-    padding: theme.spacing(6),
     flexGrow: 1,
     height: "80vh",
     display: "flex",
     background: ({ background }, props) =>
-      console.log({ props }) || theme.palette[background || "light"].main,
+      theme.palette[background || "light"].main,
     backgroundImage: ({ backgroundImage }) =>
       backgroundImage ? `url(${backgroundImage})` : "none",
     backgroundRepeat: "no-repeat",
@@ -18,10 +17,19 @@ export default makeStyles((theme) => ({
     height: ({ height }) => height || "fit-content",
     minHeight: "80vh",
   },
-  menuButton: {
-    marginRight: theme.spacing(2),
+  container: {
+    display: "flex",
+    alignItems: "flex-end",
   },
-  title: {
-    flexGrow: 1,
+  hero: {
+    background: (props) => props.backgroundImage,
+    backgroundPosition: "center",
+    backgroundSize: "cover",
+    padding: "4rem 2rem",
+
+    /* Grid styles */
+    display: "grid",
+    alignItems: "center",
+    gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
   },
 }));

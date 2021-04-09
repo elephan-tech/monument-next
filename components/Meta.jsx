@@ -6,7 +6,7 @@ const Meta = ({ title, description }) => {
   return (
     <Head>
       <title>{title}</title>
-      <link rel="icon" href="/favicon.ico" />
+      <link rel="icon" href="images/favicon.ico" />
       <link rel="manifest" href="/manifest.json" />
       <link
         href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;600&display=swap"
@@ -15,6 +15,21 @@ const Meta = ({ title, description }) => {
       <link
         href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
         rel="stylesheet"
+      />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Oswald&display=swap"
+        rel="stylesheet"
+      />
+      <link
+        rel="stylesheet"
+        type="text/css"
+        charset="UTF-8"
+        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"
+      />
+      <link
+        rel="stylesheet"
+        type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
       />
 
       <link

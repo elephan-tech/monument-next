@@ -1,111 +1,138 @@
-import React from 'react';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import Typography from '@material-ui/core/Typography';
-import Container from '@material-ui/core/Container';
-import Link from '@material-ui/core/Link';
-import useStyles from './styles'
-import { Grid } from '@material-ui/core';
+import { Heading, Link } from "@components";
+import Typography from "@material-ui/core/Typography";
+import Banner from "components/Banner";
 import Image from "next/image";
-import socials from "../../config/socials";
+import React from "react";
+import { joinClasses } from "utils/styleUtils";
+import { monumentData, pages, socials } from "../../config";
+import useStyles from "./styles";
 
-
-function Copyright({website}) {
-  const classes = useStyles();
+function Copyright({ website }) {
   return (
-    <Typography variant="body2" color="#fff">
-      {'Copyright © '}
-      <Link color="#fff" href="/"  className={classes.footerLink}>
-        {website || 'company'}
-      </Link>{' '}
+    <Typography variant="body2" color="inherit">
+      {"Copyright © " + new Date().getFullYear() + " - All Rights Reserved - "}
+      <Link color="inherit" slim href="/" component="span">
+        {website || "company"}
+      </Link>
       {new Date().getFullYear()}
-      {'.'}
+      {"."}
     </Typography>
   );
 }
 
-
 export default function Footer() {
-  const classes = useStyles();
+  const { footer, row, column, child, noPadding } = useStyles();
 
   return (
-      <footer className={classes.footer}>
-        <Container maxWidth="xl"  className={classes.footerContainer}>
-          <Grid className={classes.footerContainer}
-            container
-            direction="row"
-            justify="space-around"
-            alignItems="flex-start"
-          >
-            <Grid className={classes.gridBox}>
-              <h2 className={classes.footerTitle}>Contact Us</h2> 
-              <p><i class="fas fa-map-marked-alt" style={{color:'#fec300'}}></i> 500 19th Street NE,<br></br> 
-              Washington, DC 20002</p>
-              <p><i class="fas fa-mobile" style={{color:'#fec300'}}></i> (202) 545-3180</p>
-              <p>Fax: (202) 478-2824</p>
-              <h2 className={classes.footerTitle}>Legal</h2>
-              <Link href="/" display="block" className={classes.linkFooter}>
-                <a>Privacy policy.</a>
-              </Link>
-            </Grid>
-            <Grid className={classes.gridBox}>
-              <h2 className={classes.footerTitle}>Quick Links</h2>
-              <Link href="/" className={classes.linkFooter}>
-                <a>About Us</a>
-              </Link>
-              <Link href="/" className={classes.linkFooter}>
-                <a>Our Prgrams</a>
-              </Link>
-              <Link href="/" className={classes.linkFooter}>
-                <a>Enrollment</a>
-              </Link>
-              <Link href="/" className={classes.linkFooter}>
-                <a>Family Resources</a>
-              </Link>          
-              <Link href="/" className={classes.linkFooter}>
-                <a>Careers</a>
-              </Link>
-            </Grid>
-            <Grid className={classes.gridBox}>
-            <Link url="/" component="div">
-              <Image
-                src="/monument_logo-short.png"
-                alt="Monument Academy Logo"
-                width={200}
-                height={270}
-                position="relative"
-                style={{
-                  maxWidth: '300px',
-                  minWidth: '150px',
-                  position: 'relative',
-                }}
-              />
-            </Link>
-            </Grid>
-            <Grid className={classes.gridBox}>
-              <h2 className={classes.footerTitle}>Stay Connected</h2>
-              <div>
-                {socials.map(({ name, url }) => (
-                  <Link
-                    key={name}
-                    href={url}
-                    target="_blank"
-                    rel="noreferrer"
-                    color="inherit"
-                    component="span"
-                  >
-                    <i className={`fab fa-${name}`} aria-hidden style={{fontSize: '30px',marginRight:'16px'}}/>
-                  </Link>
-                ))}
-              </div>
-            </Grid>
-          </Grid>
-          </Container>
+    <>
+      <footer className={joinClasses([footer, row])}>
+        <div className={column}>
+          <Link href="/" component="div">
+            <Image
+              src="/images/monument_logo-short.png"
+              alt="Monument Academy Logo"
+              width={300}
+              height={400}
+              position="relative"
+              style={{
+                maxWidth: "300px",
+                minWidth: "150px",
+                position: "relative",
+              }}
+            />
+          </Link>
+        </div>
+        <div className={column}>
+          <Heading variant="h4" color="inherit" decoration="light">
+            About Us
+          </Heading>
+          <Typography variant="subtitle1">
+            Monument Academy is a weekday boarding school serving students in
+            Washington, DC. Our mission is to provide students, particularly
+            those who have had or might have contact with the foster care
+            system, with the requisite academic, social, emotional, and life
+            skills to be successful in college, career, and community, and to
+            create an outstanding school that attracts, supports, and retains
+            exceptional and caring people.
+          </Typography>
+        </div>
+        <div className={joinClasses([column, child])}>
+          <div className={joinClasses([column, noPadding])}>
+            <Typography variant="h4">contact us</Typography>
 
-          {/* <Typography variant="body1">My sticky footer can be found here.</Typography> */}
-          <div className={classes.darkerBlue}>          
-            <Copyright website="Monument Academy" className={classes.linkFooter}/>
+            <div></div>
+            <Typography variant="subtitle1">{monumentData.address}</Typography>
+            <Typography variant="subtitle1">
+              {monumentData.phoneNumber}
+            </Typography>
+            <Typography variant="subtitle1">Fax: {monumentData.fax}</Typography>
           </div>
-        
+          <div className={joinClasses([column, noPadding])}>
+            <Typography variant="h4">Quick Links</Typography>
+            {pages
+              .filter((page) =>
+                ["About Us", "Our Programs", "Enrollment", "Careers"].includes(
+                  page.name
+                )
+              )
+              .map((page) => {
+                return (
+                  <Link color="inherit" key={page.name} slim href={page.url}>
+                    {page.name}
+                  </Link>
+                );
+              })}
+          </div>
+        </div>
+        <div className={joinClasses([column, child])}>
+          <div className={joinClasses([column, noPadding])}>
+            <Typography variant="h4" gutterBottom>
+              Legal
+            </Typography>
+            <Link color="inherit" slim href="/">
+              Privacy Policy
+            </Link>
+            <Link color="inherit" slim href="/">
+              Data Security
+            </Link>
+            <Link color="inherit" slim href="/">
+              License agreement
+            </Link>
+          </div>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "space-between",
+            }}
+          >
+            <Typography variant="h4" gutterBottom>
+              Stay Connected
+            </Typography>
+            <span style={{ marginTop: 8 }}>
+              {socials.map(({ name, url }) => (
+                <Link
+                  key={name}
+                  href={url}
+                  target="_blank"
+                  rel="noreferrer"
+                  color="inherit"
+                  component="span"
+                >
+                  <i
+                    className={`fab fa-${name}`}
+                    aria-hidden
+                    style={{ fontSize: "30px", marginRight: "16px" }}
+                  />
+                </Link>
+              ))}
+            </span>
+          </div>
+        </div>
       </footer>
+      <Banner color="secondary" justify="center">
+        <Copyright website="Monument Academy" />
+      </Banner>
+    </>
   );
 }

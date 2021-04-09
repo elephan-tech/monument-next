@@ -1,15 +1,16 @@
-import React from 'react'
-import {Grid, Typography} from '@material-ui/core'
-import {Heading, Link} from '../../components'
-import Image from 'next/image'
+import { Heading } from "@components";
+import { Grid } from "@material-ui/core";
+import React from "react";
 
-const Boarding = ({title}) => {
+const Boarding = ({ title }) => {
   return (
     <Grid container direction="row">
-            <Heading color="primary" decoration="secondary"> {title}</Heading>
-             
-        </Grid>
-  )
-}
+      <Heading color="primary" decoration="secondary">
+        {" "}
+        {title}
+      </Heading>
+    </Grid>
+  );
+};
 
-export default Boarding
+export default Boarding;

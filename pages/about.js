@@ -1,5 +1,5 @@
+import { Page } from "@components";
 import React from "react";
-import Page from "../components/Page";
 
 const brushStrokeProps = {
   word: "A Home",
