@@ -1,5 +1,3 @@
-import theme from "./theme";
-
 export default {
   "*": {
     "::after": {
@@ -14,7 +12,7 @@ export default {
   },
 
   body: {
-    fontFamily: 'Oswald',
+    fontFamily: "Oswald",
     boxSizing: "border-box",
     margin: 0,
     width: "100vw",

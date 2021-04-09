@@ -8,3 +8,7 @@ export const getColor = (color, shade = "main") => {
     ? currentColor[shade]
     : currentColor || theme.colors.medium;
 };
+
+export const joinClasses = (classArray) => {
+  return classArray.join(" ");
+};

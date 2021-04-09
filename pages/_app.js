@@ -1,13 +1,16 @@
-import App from "next/app";
 import { CssBaseline, ThemeProvider } from "@material-ui/core";
+import App from "next/app";
+import { ParallaxProvider } from "react-scroll-parallax";
 import theme from "../styles/theme";
 
 const MyApp = ({ Component, pageProps }) => {
   return (
     <>
       <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <Component {...pageProps} />
+        <ParallaxProvider>
+          <CssBaseline />
+          <Component {...pageProps} />
+        </ParallaxProvider>
       </ThemeProvider>
     </>
   );

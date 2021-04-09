@@ -1,8 +1,12 @@
+import { Page, Section } from "@components";
 import React from "react";
-import Page from "../components/Page";
 
 const careers = () => {
-  return <Page title="Careers">careers</Page>;
+  return (
+    <Page title="Careers">
+      <Section>Careers</Section>
+    </Page>
+  );
 };
 
 export default careers;

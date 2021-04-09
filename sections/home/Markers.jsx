@@ -1,11 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const Markers = () => {
-  return (
-    <div>
-      
-    </div>
-  )
-}
+  return <div></div>;
+};
 
-export default Markers
+export default Markers;
