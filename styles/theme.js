@@ -1,4 +1,4 @@
-import { createMuiTheme, responsiveFontSizes } from "@material-ui/core/styles";
+import { createMuiTheme } from "@material-ui/core/styles";
 import base from "./base";
 
 const theme = createMuiTheme({
@@ -26,15 +26,16 @@ const theme = createMuiTheme({
     info: { main: "#008def" },
     warning: { main: "#ffe100" },
     light: { main: "#fff" },
+    grey: { main: "#888" },
   },
   overrides: {
     MuiButton: {
       root: { borderRadius: 7 },
       containedSizeLarge: {
-        fontFamily: "'Segoe UI', sans-serif",
+        fontFamily: "'Montserrat', sans-serif",
         fontWeight: "bold",
         fontSize: 18,
-        width: "20%",
+        width: "auto",
         padding: 16,
       },
     },
@@ -57,7 +58,7 @@ const theme = createMuiTheme({
         fontFamily: '"Oswald", sans-serif',
         fontWeight: "bold",
         textAlign: "right",
-        fontSize: "64px",
+        fontSize: "64px!important",
         letterSpacing: 0,
         opacity: 1,
       },
@@ -68,12 +69,14 @@ const theme = createMuiTheme({
         fontSize: 48,
         letterSpacing: 0,
         opacity: 1,
+        lineHeight: 2,
       },
       h3: {
         color: "primary",
         fontFamily: '"Segoe UI", sans-serif',
         fontWeight: "normal",
         fontSize: 32,
+        lineHeight: 2,
       },
       h4: {
         color: "primary",
@@ -81,15 +84,16 @@ const theme = createMuiTheme({
         fontWeight: "bold",
         textTransform: "uppercase",
         fontSize: "24px",
+        lineHeight: 2.5,
       },
       h5: {
         textAlign: "left",
         fontFamily: "'Montserrat', sans-serif",
         fontWeight: "bold",
-        fontSize: 32,
+        fontSize: 20,
         letterSpacing: 0,
         opacity: 1,
-        lineHeight: 1.48,
+        lineHeight: 2,
       },
       button: {
         textAlign: "left",
@@ -111,7 +115,6 @@ const theme = createMuiTheme({
         fontFamily: '"Montserrat", sans-serif',
         fontSize: 16,
         fontWeight: "normal",
-        letterSpacing: 0,
         opacity: 1,
       },
       body2: {
@@ -121,4 +124,4 @@ const theme = createMuiTheme({
   },
 });
 
-export default responsiveFontSizes(theme);
+export default theme;
