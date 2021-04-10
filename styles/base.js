@@ -1,3 +1,5 @@
+import theme from "./theme";
+
 export default {
   "*": {
     "::after": {
@@ -18,4 +20,6 @@ export default {
     width: "100vw",
     overflowX: "hidden",
   },
+  sectionContainer: { width: "90%", margin: "auto" },
+  hr: { border: "solid 1px #7D24FF", background: "#7D24FF", margin: "32px" },
 };
