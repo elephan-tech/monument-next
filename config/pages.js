@@ -42,7 +42,10 @@ export default [
     name: "Our Programs",
     url: "/programs",
     items: [
-      { name: "A Day  at Monument Academy", url: "/programs/day-at-monument" },
+      {
+        name: "A Day  at Monument Academy",
+        url: "/programs/a-day-at-monument",
+      },
       { name: "Academics", url: "/programs/academics" },
       { name: "Well-Being", url: "/programs/well-being" },
       { name: "Life Skills", url: "/programs/life-skills" },
