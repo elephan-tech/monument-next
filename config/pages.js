@@ -3,51 +3,59 @@ export default [
     name: "About Us",
     url: "/about",
     items: [
-      {
-        name: "Mission, Values, Philosophy",
-        url: "/mission-values-philosophy",
-      },
+      // {
+      //   name: "Mission, Values, Philosophy",
+      //   url: "about/mission-values-philosophy",
+      // },
       {
         name: "Team",
-        url: "/team",
+        url: "about/team",
       },
       {
         name: "Board of Directors",
-        url: "/board-of-directors",
+        url: "about/board-of-directors",
       },
       {
         name: "Partnerships",
-        url: "/partnerships",
+        url: "about/partnerships",
       },
       {
         name: "Awards",
-        url: "/awards",
+        url: "about/awards",
       },
       {
         name: "News & Media",
-        url: "/news-and-media",
+        url: "about/news-and-media",
       },
-      {
-        name: "Donate",
-        url: "/donate",
-      },
-      {
-        name: "Contact Us",
-        url: "/contact",
-      },
+      // {
+      //   name: "Donate",
+      //   url: "about/donate",
+      // },
+      // {
+      //   name: "Contact Us",
+      //   url: "about/contact",
+      // },
     ],
+    as: "a",
   },
   {
     name: "Our Programs",
     url: "/programs",
     items: [
-      {name: 'A Day  at Monument Academy', url:'/programs/day-at-monument'},
-      {name: 'Academics', url:'/programs/academics'},
-      {name: 'Well-Being', url:'/programs/well-being'},
-      {name: 'Life Skills', url:'/programs/life-skills'},
-      {name: 'Boarding & Student Life Program', url:'/programs/boarding-and-student-life'},
-      {name: 'National School Lunch Program', url:'/programs/national-school-lunch-program'},
-    ]
+      { name: "A Day  at Monument Academy", url: "/programs/day-at-monument" },
+      { name: "Academics", url: "/programs/academics" },
+      { name: "Well-Being", url: "/programs/well-being" },
+      { name: "Life Skills", url: "/programs/life-skills" },
+      {
+        name: "Boarding & Student Life Program",
+        url: "/programs/boarding-and-student-life",
+      },
+      {
+        name: "National School Lunch Program",
+        url: "/programs/national-school-lunch-program",
+      },
+    ],
+    as: "a",
   },
   {
     name: "Enrollment",
@@ -68,7 +76,6 @@ export default [
   {
     name: "Donate",
     url: "/donate",
-    component: "button",
-    color: "secondary",
+    as: "button",
   },
 ];

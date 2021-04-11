@@ -5,28 +5,25 @@ export default makeStyles((theme) => ({
     flexGrow: 1,
     height: "80vh",
     display: "flex",
-    background: ({ background }, props) =>
-      theme.palette[background || "light"].main,
+    background: ({ background }) => theme.palette[background || "light"].main,
     backgroundImage: ({ backgroundImage }) =>
       backgroundImage ? `url(${backgroundImage})` : "none",
     backgroundRepeat: "no-repeat",
     backgroundSize: ({ backgroundSize }) => backgroundSize || "cover",
     backgroundPosition: ({ backgroundPosition }) =>
       backgroundPosition || "center",
-    marginTop: ({ topMargin }) => (topMargin ? 100 : "auto"),
+    marginTop: ({ topMargin }) => (topMargin ? 110 : "auto"),
+    margin: "auto",
     height: ({ height }) => height || "fit-content",
     minHeight: "80vh",
+    padding: ({ dense }) => (dense ? theme.spacing(1, 2) : theme.spacing(0)),
+    width: ({ dense }) => (dense ? "90%" : "100%"),
   },
   container: {
     display: "flex",
     alignItems: "flex-end",
   },
   hero: {
-    background: (props) => props.backgroundImage,
-    backgroundPosition: "center",
-    backgroundSize: "cover",
-    padding: "4rem 2rem",
-
     /* Grid styles */
     display: "grid",
     alignItems: "center",

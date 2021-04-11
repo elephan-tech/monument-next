@@ -14,13 +14,7 @@ export default [
   {
     title: "More Than a School, A Home",
     component: Hero,
-    props: {
-      backgroundImage: "images/bg_columns.png",
-      backgroundPosition: "top center",
-      backgroundSize: "cover",
-      topMargin: true,
-      type: "hero",
-    },
+    props: {},
     styles: {},
     order: 1,
   },

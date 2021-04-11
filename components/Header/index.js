@@ -1,7 +1,5 @@
-import { Banner, Drawer, Link, Logo } from "@components";
-import { AppBar, Box, Hidden } from "@material-ui/core";
-import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
+import { Banner, Drawer, Dropdown, Link, Logo } from "@components";
+import { AppBar, Box, Hidden, Toolbar, Typography } from "@material-ui/core";
 import React, { useState } from "react";
 import HideOnScroll from "../../animations/HideOnScroll";
 import socials from "../../config/socials";
@@ -27,15 +25,14 @@ const Navbar = ({ pages }) => {
               {phoneNumber || "(202) 545-3180"}
             </Typography>
 
-            <div>
+            <div className={classes.socials}>
               {socials.map(({ name, url }) => (
                 <Link
-                  key={name}
                   href={url}
                   target="_blank"
                   rel="noreferrer"
+                  key={name}
                   color="inherit"
-                  component="span"
                 >
                   <i className={`fab fa-${name}`} aria-hidden />
                 </Link>
@@ -48,19 +45,33 @@ const Navbar = ({ pages }) => {
               <Box
                 display="flex"
                 flexDirection="row"
-                justifyContent="space-evenly"
+                // justifyContent="space-around"
                 alignItems="center"
               >
                 {pages.map((page) => {
+                  const hasItems = page.items && !!page.items.length;
+                  console.log({ hasItems });
                   return (
-                    <Link
-                      key={page.name}
-                      href={page.url}
-                      component={page.component || "a"}
-                      bg={page.color || ""}
+                    <div
+                      className={`${classes.menuButton} ${
+                        !hasItems && classes[page.as || "a"]
+                      }`}
                     >
-                      <div style={{ margin: "auto" }}>{page.name}</div>
-                    </Link>
+                      <Link
+                        variant="h6"
+                        underline="none"
+                        key={page.name}
+                        href={page.url}
+                        as={page.as}
+                      >
+                        {console.log({ items: page.items })}
+                        {hasItems ? (
+                          <Dropdown name={page.name} items={page.items} />
+                        ) : (
+                          page.name
+                        )}
+                      </Link>
+                    </div>
                   );
                 })}
               </Box>

@@ -11,7 +11,7 @@ function Copyright({ website }) {
   return (
     <Typography variant="body2" color="inherit">
       {"Copyright © " + new Date().getFullYear() + " - All Rights Reserved - "}
-      <Link color="inherit" slim href="/" component="span">
+      <Link color="inherit" href="/" component="span">
         {website || "company"}
       </Link>
       {new Date().getFullYear()}
@@ -77,7 +77,7 @@ export default function Footer() {
               )
               .map((page) => {
                 return (
-                  <Link color="inherit" key={page.name} slim href={page.url}>
+                  <Link color="inherit" key={page.name} href={page.url}>
                     {page.name}
                   </Link>
                 );
@@ -89,13 +89,13 @@ export default function Footer() {
             <Typography variant="h4" gutterBottom>
               Legal
             </Typography>
-            <Link color="inherit" slim href="/">
+            <Link color="inherit" href="/">
               Privacy Policy
             </Link>
-            <Link color="inherit" slim href="/">
+            <Link color="inherit" href="/">
               Data Security
             </Link>
-            <Link color="inherit" slim href="/">
+            <Link color="inherit" href="/">
               License agreement
             </Link>
           </div>

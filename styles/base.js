@@ -1,5 +1,3 @@
-import theme from "./theme";
-
 export default {
   "*": {
     "::after": {
@@ -11,9 +9,11 @@ export default {
   },
   html: {
     scrollBehavior: "smooth",
+    height: "100%",
   },
 
   body: {
+    height: "100vh",
     fontFamily: "Oswald",
     boxSizing: "border-box",
     margin: 0,
@@ -21,5 +21,4 @@ export default {
     overflowX: "hidden",
   },
   sectionContainer: { width: "90%", margin: "auto" },
-  hr: { border: "solid 1px #7D24FF", background: "#7D24FF", margin: "32px" },
 };
